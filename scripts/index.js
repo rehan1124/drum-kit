@@ -36,15 +36,25 @@ function playSound(event) {
   audio.play();
 }
 
+function addAnimation(btnPressed) {
+  var activeBtn = document.querySelector(`.${btnPressed}`);
+  activeBtn.classList.add("pressed");
+  setTimeout(function () {
+    activeBtn.classList.remove("pressed");
+  }, 100);
+}
+
 // Event listener for button click
 for (var i = 0; i < drumBtn.length; i += 1) {
   drumBtn[i].addEventListener("click", function () {
     var button = this.textContent;
     playSound(button);
+    addAnimation(button);
   });
 }
 
 // Event listener for keyboard key press
 document.addEventListener("keydown", function (event) {
   playSound(event.key);
+  addAnimation(event.key);
 });
