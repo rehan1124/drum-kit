@@ -1,8 +1,14 @@
 "use strict";
 
+/*
+WEB ELEMENT LOCATORS
+*/
 // Locate drum buttons
 var drumBtn = document.querySelectorAll(".drum");
 
+/*
+FUNCTIONS
+*/
 function playSound(event) {
   var sound = "";
   // console.log(event.key);
@@ -44,6 +50,9 @@ function addAnimation(btnPressed) {
   }, 100);
 }
 
+/*
+EVENT LISTENERS
+*/
 // Event listener for button click
 for (var i = 0; i < drumBtn.length; i += 1) {
   drumBtn[i].addEventListener("click", function () {
